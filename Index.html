@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d24">
+  <title>GiftDrop — Gift Card Giveaways</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">🎁 GiftDrop</a>
+    <a class="nav-link" href="#giveaways">Giveaways</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="pill">✨ YOUR GIVEAWAY HUB</span>
+      <h1>Your next gift could be <span>FREE!</span></h1>
+      <p>Explore gift cards for games, apps, shopping,
+         entertainment, and more.</p>
+      <a class="button primary" href="#giveaways">
+        Explore prizes ↓
+      </a>
+      <div class="hero-art" aria-hidden="true">🎁 🎮 💎</div>
+    </section>
+
+    <section class="section" id="giveaways">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR FAVORITE</p>
+          <h2>Explore gift cards</h2>
+        </div>
+        <span class="count" id="card-count">0 cards</span>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="All">All</button>
+        <button class="filter" data-category="Gaming">Gaming</button>
+        <button class="filter" data-category="Apps">Apps</button>
+        <button class="filter" data-category="Entertainment">Entertainment</button>
+        <button class="filter" data-category="Shopping">Shopping</button>
+      </div>
+
+      <div class="gift-grid" id="gift-grid"></div>
+    </section>
+
+    <section class="section entry-section" id="enter">
+      <p class="eyebrow">JOIN THE DEMO</p>
+      <h2>Enter a giveaway 🎉</h2>
+      <p class="muted">
+        Try the entry system on this device. Use a nickname only.
+      </p>
+
+      <form id="entry-form">
+        <label for="nickname">Your nickname</label>
+        <input id="nickname" name="nickname"
+          type="text" minlength="2" maxlength="20"
+          placeholder="e.g. CoolGamer123" required
+          autocomplete="off">
+
+        <label for="prize">Choose a gift card</label>
+        <select id="prize" name="prize" required>
+          <option value="">Choose a prize...</option>
+        </select>
+
+        <button class="button primary full" type="submit">
+          Enter demo giveaway
+        </button>
+      </form>
+
+      <p id="entry-message" class="message" role="status"
+         aria-live="polite"></p>
+    </section>
+
+    <section class="section admin-section">
+      <p class="eyebrow">TESTING TOOL</p>
+      <h2>Demo winner picker 🎲</h2>
+      <p class="muted">
+        Selects one random nickname from the demo entries
+        for the chosen prize.
+      </p>
+
+      <label for="draw-prize">Prize to draw</label>
+      <select id="draw-prize">
+        <option value="">Choose a prize...</option>
+      </select>
+
+      <button class="button secondary full" id="draw-button"
+        type="button">
+        🎲 Pick a random demo winner
+      </button>
+
+      <div id="winner-result" class="winner-result"
+        role="status" aria-live="polite">
+        <span>🏆</span>
+        <p>No winner picked yet.</p>
+      </div>
+
+      <div class="entry-summary">
+        <span>Demo entries on this device</span>
+        <strong id="entry-count">0</strong>
+      </div>
+
+      <button class="text-button" id="show-entries"
+        type="button">Show demo entries</button>
+      <div id="entries-list" class="entries-list" hidden></div>
+
+      <button class="text-button danger" id="reset-button"
+        type="button">Reset all demo entries</button>
+    </section>
+
+    <section class="notice">
+      <strong>⚠️ Demo website — not an active giveaway</strong>
+      <p>
+        No real prizes are supplied. Entries are stored only
+        in this browser on this device. The demo winner picker
+        is not secure or suitable for choosing real winners.
+        Gift card brands are trademarks of their owners.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">🎁 GiftDrop</a>
+    <p>Made for fun. Play fair. Stay safe.</p>
+    <p>© <span id="year"></span> GiftDrop Demo</p>
+  </footer>
+</body>
+</html>
