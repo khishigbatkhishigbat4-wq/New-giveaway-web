@@ -1,3 +1,3 @@
 # New-giveaway-web
 Gift cards
-The website http://giftdropfreegifts.io/
+The website http://giftdrop.io/
